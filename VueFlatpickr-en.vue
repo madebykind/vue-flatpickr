@@ -3,7 +3,7 @@
 </template>
 
 <script>
-import Flatpickr from './assets/flatpickr-en.js'
+import Flatpickr from 'flatpickr'
 
 export default {
   props: {
@@ -14,6 +14,11 @@ export default {
       type: String,
     }
   },
+  data() {
+    return {
+      flatpickr: null,
+    };
+  },
   watch: {
     options: {
       handler() {
@@ -23,10 +28,10 @@ export default {
     }
   },
   ready() {
-    new Flatpickr(this.$el, this.options)
+    this.flatpickr = new Flatpickr(this.$el, this.options);
   },
   mounted() {
-    new Flatpickr(this.$el, this.options)
+    this.flatpickr = new Flatpickr(this.$el, this.options);
   }
 }
 </script>
