@@ -1,5 +1,5 @@
 <template>
-  <input type="text">
+  <input type="text" :class="inputClass">
 </template>
 
 <script>
@@ -9,6 +9,9 @@ export default {
   props: {
     options: {
       type: Object
+    },
+    inputClass: {
+      type: String,
     }
   },
   watch: {
